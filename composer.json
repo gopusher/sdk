@@ -1,0 +1,20 @@
+{
+  "name": "gopusher/sdk",
+  "description": "the gopusher sdk",
+  "keywords": ["gopusher", "chat", "im", "chat"],
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/gopusher/sdk/issues",
+    "source": "https://github.com/gopusher/sdk"
+  },
+
+  "require": {
+    "php": ">=5.6"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "Gopusher\\Sdk\\": "src/"
+    }
+  }
+}
