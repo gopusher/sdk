@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>websocket测试</title>
+</head>
+<body>
+长连接测试页面.
+<script>
+    var wsHost = 'ws://sdk.demo.com:8900/ws?c=123&t=tokenABC';
+    var ws = new WebSocket( wsHost )
+    ws.onmessage = function(evt)
+    {
+        console.log(evt.data)
+    };
+    ws.onopen = function(evt) {
+        console.log('连接成功');
+    };
+    ws.onclose = function(evt)
+    {
+        console.log("连接断开");
+    };
+    ws.onerror = function(evt)
+    {
+        console.log("连接错误");
+    };
+</script>
+</body>
+</html>
