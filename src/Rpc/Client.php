@@ -4,7 +4,7 @@ namespace Gopusher\Sdk\Rpc;
 
 use Exception;
 
-class JsonRPC
+class Client
 {
     /**
      * @var array
@@ -214,30 +214,30 @@ class JsonRPC
     }
 }
 
-//$client = new JsonRPC();
+//$client = new Client();
 //$r = $client->SendToConnections("message.demo.com", 8901, 'token', array_slice($argv, 2), $argv[1]);
 //var_export($r);
 
-// $client = new JsonRPC();
+// $client = new Client();
 // $r = $client->Broadcast("message.demo.com", 8901, 'token', $argv[1]);
 // var_export($r);
 
-// $client = new JsonRPC();
+// $client = new Client();
 // $r = $client->CheckConnectionsOnline("message.demo.com", 8901, 'token', array_slice($argv, 1));
 // var_export($r);
 
-// $client = new JsonRPC();
+// $client = new Client();
 // $r = $client->GetAllConnections("message.demo.com", 8901, 'token');
 // var_export($r);
 
-// $client = new JsonRPC();
+// $client = new Client();
 // $r = $client->KickConnections("message.demo.com", 8901, 'token', array_slice($argv, 1));
 // var_export($r);
 
-// $client = new JsonRPC();
+// $client = new Client();
 // $r = $client->KickAllConnections("message.demo.com", 8901, 'token');
 // var_export($r);
 
-// $client = new JsonRPC();
+// $client = new Client();
 // $r = $client->GetNodeId("message.demo.com", 8901, 'token');
 // var_export($r);

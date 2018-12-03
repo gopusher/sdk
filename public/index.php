@@ -23,6 +23,11 @@ if (! empty($body)) {
         {
             file_put_contents('/tmp/chat-rpc.log', 'offline ' .$connId. $nodeId . PHP_EOL, FILE_APPEND);
         }
+
+        public function joinCluster($nodeId)
+        {
+            file_put_contents('/tmp/chat-rpc.log', 'joinCluster ' . $nodeId . PHP_EOL, FILE_APPEND);
+        }
     }
 
     $notification = new \Gopusher\Sdk\Notification\Notification();

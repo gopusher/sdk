@@ -98,6 +98,16 @@ class Notification
                 }
                 break;
 
+            case 'JoinCluster':
+                if ($argsLen != 1) {
+                    throw new \Exception('bad request: ' . var_export($args, true));
+                }
+                foreach ($this->handlers as $handler) {
+                    /** @var Handler $handler */
+                    $handler->joinCluster(...$args);
+                }
+                break;
+
             default:
                 throw new \Exception('bad request: undefined method:' . $data['method']);
         }

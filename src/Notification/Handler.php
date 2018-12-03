@@ -31,4 +31,11 @@ interface Handler
      * @throws \Exception
      */
     public function offline($connId, $nodeId);
+
+    /**
+     * @param $nodeId
+     * @return bool
+     * @throws \Exception
+     */
+    public function joinCluster($nodeId);
 }
