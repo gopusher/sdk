@@ -21,9 +21,9 @@ class JsonRPC
     {
         $key = $host . ':' . $port;
         if (! isset(self::$obj[$key])) {
-            $conn = fsockopen($host, $port, $errno, $errstr, 3);
+            $conn = fsockopen($host, $port, $errNo, $errStr, 3);
             if (! $conn) {
-                throw new \Exception('建立连接失败');
+                throw new \Exception(sprintf('connect failed, errorNo: %s, errStr: %s', $errNo, $errStr));
             }
             self::$obj[$key] = $conn;
         }
@@ -43,7 +43,7 @@ class JsonRPC
         $err = fwrite($conn, json_encode(array_merge($data, ['id' => 0])) . "\n");
 
         if ($err === false) {
-            throw new \Exception('调用方法失败' . __METHOD__);
+            throw new \Exception('rpc call failed');
         }
 
         stream_set_timeout($conn, 0, 3000);
