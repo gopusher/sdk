@@ -3,6 +3,7 @@
 namespace Gopusher\Sdk;
 
 use Gopusher\Sdk\Notification\Handler;
+use Gopusher\Sdk\Notification\Notification;
 
 /**
  * Class Gopusher
@@ -11,29 +12,18 @@ use Gopusher\Sdk\Notification\Handler;
 class Gopusher
 {
     /**
-     * @var array
+     * @param array $handlers
+     *
+     * @return Notification
      */
-    protected $config = [
-        'notificationUserAgent'  => 'Gopusher 1.0',
-    ];
-
-    /**
-     * @var Handler
-     */
-    protected $notification;
-
-    public function __construct($config = [])
+    public function notification($handlers)
     {
-        $config += $this->config + $config;
+        $notification = new Notification();
+        foreach ($handlers as $handler) {
+            /** @var Handler $handler */
+            $notification->registerHandler($handler);
+        }
 
-        $this->notification = new Handler($config['notificationUserAgent']);
-    }
-
-    /**
-     * @return Handler
-     */
-    public function notification()
-    {
-        return $this->notification;
+        return $notification;
     }
 }
