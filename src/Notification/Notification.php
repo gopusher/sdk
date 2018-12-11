@@ -37,7 +37,7 @@ class Notification
 
             return $this->success();
         } catch (\Exception $e) {
-            return $this->fail();
+            return $this->fail((string) $e);
         }
     }
 
@@ -122,12 +122,12 @@ class Notification
         ]);
     }
 
-    public function fail()
+    public function fail($error)
     {
         return json_encode([
             'code'      => 1,   //response code, 0：success，other: fail
             'data'      => [],
-            'error'     => "",
+            'error'     => $error,
         ]);
     }
 }
