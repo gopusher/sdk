@@ -109,7 +109,7 @@ class Client
      * @param $port
      * @param $token
      * @param array $connections
-     * @return mixed|null
+     * @return mixed|null 返回 在线的 connections
      * @throws Exception
      */
     public function CheckConnectionsOnline($host, $port, $token, array $connections)
@@ -129,7 +129,7 @@ class Client
      * @param $host
      * @param $port
      * @param $token
-     * @return mixed|null
+     * @return mixed|null 返回 所有在线的 connections
      * @throws Exception
      */
     public function GetAllConnections($host, $port, $token)
@@ -215,29 +215,29 @@ class Client
 }
 
 //$client = new Client();
-//$r = $client->SendToConnections("message.demo.com", 8901, 'token', array_slice($argv, 2), $argv[1]);
+//$r = $client->SendToConnections("sdk.demo.com", 8901, 'token', array_slice($argv, 2), $argv[1]);
 //var_export($r);
 
 // $client = new Client();
-// $r = $client->Broadcast("message.demo.com", 8901, 'token', $argv[1]);
+// $r = $client->Broadcast("sdk.demo.com", 8901, 'token', $argv[1]);
 // var_export($r);
 
 // $client = new Client();
-// $r = $client->CheckConnectionsOnline("message.demo.com", 8901, 'token', array_slice($argv, 1));
+// $r = $client->CheckConnectionsOnline("sdk.demo.com", 8901, 'token', array_slice($argv, 1));
 // var_export($r);
 
 // $client = new Client();
-// $r = $client->GetAllConnections("message.demo.com", 8901, 'token');
+// $r = $client->GetAllConnections("sdk.demo.com", 8901, 'token');
 // var_export($r);
 
 // $client = new Client();
-// $r = $client->KickConnections("message.demo.com", 8901, 'token', array_slice($argv, 1));
+// $r = $client->KickConnections("sdk.demo.com", 8901, 'token', array_slice($argv, 1));
 // var_export($r);
 
 // $client = new Client();
-// $r = $client->KickAllConnections("message.demo.com", 8901, 'token');
+// $r = $client->KickAllConnections("sdk.demo.com", 8901, 'token');
 // var_export($r);
 
 // $client = new Client();
-// $r = $client->GetNodeId("message.demo.com", 8901, 'token');
+// $r = $client->GetNodeId("sdk.demo.com", 8901, 'token');
 // var_export($r);

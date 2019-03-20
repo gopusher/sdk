@@ -11,22 +11,34 @@ if (! empty($body)) {
     class Handler implements \Gopusher\Sdk\Notification\Handler {
         public function checkToken($connId, $token, $nodeId)
         {
-            file_put_contents('/tmp/chat-rpc.log', 'checkToken ' .$connId. $token. $nodeId . PHP_EOL, FILE_APPEND);
+            file_put_contents(
+            '/tmp/chat-rpc.log',
+            sprintf('checkToken, $connId: %s, $token: %s, $nodeId: %s', $connId, $token, $nodeId) . PHP_EOL,
+                FILE_APPEND
+            );
         }
 
         public function online($connId, $nodeId)
         {
-            file_put_contents('/tmp/chat-rpc.log', 'online ' .$connId. $nodeId . PHP_EOL, FILE_APPEND);
+            file_put_contents(
+                '/tmp/chat-rpc.log',
+                sprintf('online, $connId: %s, $nodeId: %s', $connId, $nodeId) . PHP_EOL,
+                FILE_APPEND
+            );
         }
 
         public function offline($connId, $nodeId)
         {
-            file_put_contents('/tmp/chat-rpc.log', 'offline ' .$connId. $nodeId . PHP_EOL, FILE_APPEND);
+            file_put_contents(
+                '/tmp/chat-rpc.log',
+                sprintf('offline, $connId: %s, $nodeId: %s', $connId, $nodeId) . PHP_EOL,
+                FILE_APPEND
+            );
         }
 
         public function joinCluster($nodeId)
         {
-            file_put_contents('/tmp/chat-rpc.log', 'joinCluster ' . $nodeId . PHP_EOL, FILE_APPEND);
+            file_put_contents('/tmp/chat-rpc.log', 'joinCluster, $nodeId: ' . $nodeId . PHP_EOL, FILE_APPEND);
         }
     }
 
